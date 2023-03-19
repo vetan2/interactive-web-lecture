@@ -1,0 +1,12 @@
+{
+  "name": "interactive-web-lecture",
+  "description": "Fast Campus 21개 프로젝트로 완성하는 인터랙티브 웹 개발 with Three.js & Canvas",
+  "scripts": {},
+  "author": "vetan2",
+  "devDependencies": {
+    "@vetan2/eslint-config-react": "^0.0.1",
+    "@vetan2/prettier-config": "^0.0.1",
+    "eslint": "^8.36.0",
+    "prettier": "^2.8.4"
+  }
+}
