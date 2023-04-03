@@ -2,6 +2,7 @@ import "modern-normalize/modern-normalize.css"
 import React from "react"
 import { createRoot } from "react-dom/client"
 import { BrowserRouter } from "react-router-dom"
+import "reset-css"
 import "./global.css"
 import { Router } from "./Router"
 
