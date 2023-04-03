@@ -12,5 +12,5 @@ export default defineConfig({
       exportAsDefault: true,
     }),
   ],
-  base: "/reservation-platform-front/",
+  base: "/interactive-web-lecture",
 })
