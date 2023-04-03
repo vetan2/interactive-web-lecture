@@ -12,4 +12,5 @@ export default defineConfig({
       exportAsDefault: true,
     }),
   ],
+  base: "/reservation-platform-front/",
 })
