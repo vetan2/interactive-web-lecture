@@ -1,18 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Fragment } from "react"
+import { FC, Fragment, PropsWithChildren } from "react"
 import { Route, Routes } from "react-router-dom"
 
-const BASIC: Record<string, { [key: string]: any }> = import.meta.globEager(
-  "/src/pages/(_app|404).tsx",
-)
+const BASIC: Record<string, { [key: string]: FC<PropsWithChildren> }> =
+  import.meta.globEager("/src/pages/(_app|404).tsx")
 
-const COMPONENTS: Record<string, { [key: string]: any }> =
-  import.meta.globEager("/src/pages/**/[a-z[]*.tsx")
+const COMPONENTS: Record<string, { [key: string]: FC }> = import.meta.globEager(
+  "/src/pages/**/[a-z[]*.tsx",
+)
 
 const basics = Object.keys(BASIC).reduce((basic, file) => {
   const key = file.replace(/\/src\/pages\/|\.tsx$/g, "")
-  return { ...basic, [key]: BASIC[file].default }
-}, {} as Record<string, any>)
+  return { ...basic, [key]: BASIC[file].default } satisfies Record<
+    string,
+    FC<PropsWithChildren>
+  >
+}, {} as Record<string, FC<PropsWithChildren>>)
 
 const components = Object.keys(COMPONENTS).map((component) => {
   const path = component

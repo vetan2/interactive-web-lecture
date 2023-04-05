@@ -1,12 +1,18 @@
+import { Helmet } from "react-helmet"
 import UFO from "../../../asset/ufo.svg"
-import { container } from "./ch02.css"
+import { container } from "./index.css"
 
-const Index = () => {
+const Page = () => {
   return (
-    <div className={container}>
-      <UFO />
-    </div>
+    <>
+      <Helmet>
+        <title>404 에러 페이지</title>
+      </Helmet>
+      <div className={container}>
+        <UFO />
+      </div>
+    </>
   )
 }
 
-export default Index
+export default Page

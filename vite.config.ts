@@ -10,6 +10,9 @@ export default defineConfig({
     vanillaExtractPlugin(),
     svgr({
       exportAsDefault: true,
+      svgrOptions: {
+        ref: true,
+      },
     }),
   ],
   base: "/interactive-web-lecture",

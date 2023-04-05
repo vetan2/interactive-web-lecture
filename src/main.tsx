@@ -8,9 +8,7 @@ import { Router } from "./Router"
 
 createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <BrowserRouter
-      basename={import.meta.env.PROD ? "interactive-web-lecture" : undefined}
-    >
+    <BrowserRouter basename="interactive-web-lecture">
       <Router />
     </BrowserRouter>
   </React.StrictMode>,
