@@ -20,8 +20,5 @@ globalStyle(`${ul} > li > ul > li a`, {
   fontWeight: 500,
   fontSize: 24,
   marginBottom: 4,
-})
-
-globalStyle(`${ul} > li > ul > li a:visited`, {
   color: "black",
 })
