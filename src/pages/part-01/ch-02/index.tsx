@@ -2,8 +2,6 @@ import { Helmet } from "react-helmet"
 import UFO from "../../../asset/ufo.svg"
 import { container } from "./index.css"
 
-// A
-
 const Page = () => {
   return (
     <>
