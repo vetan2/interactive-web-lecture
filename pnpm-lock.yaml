@@ -10,6 +10,9 @@ dependencies:
   clsx:
     specifier: ^1.2.1
     version: 1.2.1
+  fp-ts:
+    specifier: ^2.13.1
+    version: 2.13.1
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -51,12 +54,15 @@ devDependencies:
   '@vitejs/plugin-react':
     specifier: ^3.1.0
     version: 3.1.0(vite@4.2.1)
+  esbuild-vanilla-image-loader:
+    specifier: ^0.1.3
+    version: 0.1.3
   eslint:
     specifier: ^8.37.0
     version: 8.37.0
   eslint-plugin-import:
     specifier: ^2.27.5
-    version: 2.27.5(eslint@8.37.0)
+    version: 2.27.5(@typescript-eslint/parser@5.57.1)(eslint-import-resolver-typescript@3.5.4)(eslint@8.37.0)
   prettier:
     specifier: ^2.8.7
     version: 2.8.7
@@ -1735,6 +1741,10 @@ packages:
       is-symbol: 1.0.4
     dev: true
 
+  /esbuild-vanilla-image-loader@0.1.3:
+    resolution: {integrity: sha512-Yg8FrpbTSR2NqwvLW1a6LhqmuZJQ0ThbZRzvcxiCKrotylMWrMX9XC9VFODfNwBzqYtkOZtL0qcSo/0DaugJLw==}
+    dev: true
+
   /esbuild@0.17.15:
     resolution: {integrity: sha512-LBUV2VsUIc/iD9ME75qhT4aJj0r75abCVS0jakhFzOtR7TQsqQA5w0tZ+KTKnwl3kXE0MhskNdHDh/I5aCR1Zw==}
     engines: {node: '>=12'}
@@ -1839,7 +1849,7 @@ packages:
       debug: 4.3.4
       enhanced-resolve: 5.12.0
       eslint: 8.37.0
-      eslint-plugin-import: 2.27.5(eslint@8.37.0)
+      eslint-plugin-import: 2.27.5(@typescript-eslint/parser@5.57.1)(eslint-import-resolver-typescript@3.5.4)(eslint@8.37.0)
       get-tsconfig: 4.5.0
       globby: 13.1.3
       is-core-module: 2.11.0
@@ -1879,34 +1889,6 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-module-utils@2.7.4(eslint-import-resolver-node@0.3.7)(eslint@8.37.0):
-    resolution: {integrity: sha512-j4GT+rqzCoRKHwURX7pddtIPGySnX9Si/cgMI5ztrcqOPtk5dDEeZ34CQVPphnqkJytlc97Vuk05Um2mJ3gEQA==}
-    engines: {node: '>=4'}
-    peerDependencies:
-      '@typescript-eslint/parser': '*'
-      eslint: '*'
-      eslint-import-resolver-node: '*'
-      eslint-import-resolver-typescript: '*'
-      eslint-import-resolver-webpack: '*'
-    peerDependenciesMeta:
-      '@typescript-eslint/parser':
-        optional: true
-      eslint:
-        optional: true
-      eslint-import-resolver-node:
-        optional: true
-      eslint-import-resolver-typescript:
-        optional: true
-      eslint-import-resolver-webpack:
-        optional: true
-    dependencies:
-      debug: 3.2.7
-      eslint: 8.37.0
-      eslint-import-resolver-node: 0.3.7
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /eslint-plugin-import@2.27.5(@typescript-eslint/parser@5.57.1)(eslint-import-resolver-typescript@3.5.4)(eslint@8.37.0):
     resolution: {integrity: sha512-LmEt3GVofgiGuiE+ORpnvP+kAm3h6MLZJ4Q5HCyHADofsb4VzXFsRiWj3c0OFiV+3DWFh0qg3v9gcPlfc3zRow==}
     engines: {node: '>=4'}
@@ -1926,38 +1908,6 @@ packages:
       eslint: 8.37.0
       eslint-import-resolver-node: 0.3.7
       eslint-module-utils: 2.7.4(@typescript-eslint/parser@5.57.1)(eslint-import-resolver-node@0.3.7)(eslint-import-resolver-typescript@3.5.4)(eslint@8.37.0)
-      has: 1.0.3
-      is-core-module: 2.11.0
-      is-glob: 4.0.3
-      minimatch: 3.1.2
-      object.values: 1.1.6
-      resolve: 1.22.1
-      semver: 6.3.0
-      tsconfig-paths: 3.14.2
-    transitivePeerDependencies:
-      - eslint-import-resolver-typescript
-      - eslint-import-resolver-webpack
-      - supports-color
-    dev: true
-
-  /eslint-plugin-import@2.27.5(eslint@8.37.0):
-    resolution: {integrity: sha512-LmEt3GVofgiGuiE+ORpnvP+kAm3h6MLZJ4Q5HCyHADofsb4VzXFsRiWj3c0OFiV+3DWFh0qg3v9gcPlfc3zRow==}
-    engines: {node: '>=4'}
-    peerDependencies:
-      '@typescript-eslint/parser': '*'
-      eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0 || ^8
-    peerDependenciesMeta:
-      '@typescript-eslint/parser':
-        optional: true
-    dependencies:
-      array-includes: 3.1.6
-      array.prototype.flat: 1.3.1
-      array.prototype.flatmap: 1.3.1
-      debug: 3.2.7
-      doctrine: 2.1.0
-      eslint: 8.37.0
-      eslint-import-resolver-node: 0.3.7
-      eslint-module-utils: 2.7.4(eslint-import-resolver-node@0.3.7)(eslint@8.37.0)
       has: 1.0.3
       is-core-module: 2.11.0
       is-glob: 4.0.3
@@ -2192,6 +2142,10 @@ packages:
     dependencies:
       is-callable: 1.2.7
     dev: true
+
+  /fp-ts@2.13.1:
+    resolution: {integrity: sha512-0eu5ULPS2c/jsa1lGFneEFFEdTbembJv8e4QKXeVJ3lm/5hyve06dlKZrpxmMwJt6rYen7sxmHHK2CLaXvWuWQ==}
+    dev: false
 
   /fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}

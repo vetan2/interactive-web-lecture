@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet"
-import UFO from "../../../asset/ufo.svg"
 import { container } from "./index.css"
+import UFO from "./ufo.svg"
 
 const Page = () => {
   return (
