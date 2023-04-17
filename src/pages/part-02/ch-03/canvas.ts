@@ -50,6 +50,9 @@ export const useCanvas = () => {
       canvas.height = height * dpr
       ctx.scale(dpr, dpr)
     }),
+    ioOption.chainFirstIOK((info) => () => {
+      canvasInfo.current = info
+    }),
   )
 
   const createRing = () => {
@@ -84,7 +87,6 @@ export const useCanvas = () => {
   }, [])
 
   useEffect(() => {
-    canvasInfo.current = pipe(getCanvasElement(), option.toUndefined)
     initCanvas()
     requestAnimationFrame(frame)
 
